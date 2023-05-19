@@ -15,5 +15,6 @@ void prompt(char **av, char **env);
 void processInput(char *string, char **args);
 size_t getLength(const char *str);
 void executeCommand(char **args, char **av, char **env);
+int comp_string(const char *str1, const char *str2);
 
 #endif
