@@ -1,5 +1,5 @@
 /**
- * compareStrings - Compare two strings without using strcmp.
+ * comp_string - Compare two strings without using strcmp.
  * @str1: The first string to compare.
  * @str2: The second string to compare.
  *
@@ -15,14 +15,14 @@ int comp_string(const char *str1, const char *str2)
 	}
 	if (*str1 == *str2)
 	{
-		return 0; /* Strings are equal */
+		return (0); /* Strings are equal */
 	}
 	else if (*str1 < *str2)
 	{
-		return -1; /* str1 is less than str2 */
+		return (-1); /* str1 is less than str2 */
 	}
 	else
 	{
-		return 1; /* str1 is greater than str2 */
+		return (1); /* str1 is greater than str2 */
 	}
 }
