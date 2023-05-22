@@ -26,13 +26,4 @@ void processInput(char *string, char **args)
 	}
 
 	args[j] = NULL;
-	/*check if the path has to Handles*/
-	if (args[0] != NULL && args[0][0] != '/')
-    {
-        if (Handle_Path(args) == 0)
-        {
-            printf("%s: Command not found\n", args[0]);
-            args[0] = NULL;
-	}
-    }
 }
