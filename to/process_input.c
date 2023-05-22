@@ -26,4 +26,15 @@ void processInput(char *string, char **args)
 	}
 
 	args[j] = NULL;
+	// Check if the command requires a full path
+    if (args[0] != NULL && args[0][0] != '/')
+    {
+        // Call Handle_Path to search for the command in /bin/ and append the full path
+        if (Handle_Path(args) == 0)
+        {
+            printf("%s: Command not found\n", args[0]);
+            args[0] = NULL;
+        }
+    }
+
 }
