@@ -10,11 +10,16 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <string.h>
+#include <dirent.h>
 
+
+char *str_cpy(char *dst, const char *src);
+char *str_cat(char *dst, const char *src);
 void prompt(char **av, char **env);
 void processInput(char *string, char **args);
 size_t getLength(const char *str);
 void executeCommand(char **args, char **av, char **env);
 int comp_string(const char *str1, const char *str2);
+int Handle_Path(char **args);
 
 #endif

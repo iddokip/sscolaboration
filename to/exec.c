@@ -10,6 +10,13 @@ void executeCommand(char **args, char **av, char **env)
 {
 	char *str = ": No such file or directory\n";
 
+	/*Search and append directory path to args[0]*/
+	Handle_Path(args);
+	if (comp_string(args[0], "exit") == 0)
+                {
+                        exit(EXIT_SUCCESS);
+                }
+
 	if (execve(args[0], args, env) == -1)
 	{
 		write(STDOUT_FILENO, av[0], getLength(av[0]));
