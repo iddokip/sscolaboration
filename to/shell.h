@@ -21,5 +21,6 @@ size_t getLength(const char *str);
 void executeCommand(char **args, char **av, char **env);
 int comp_string(const char *str1, const char *str2);
 int Handle_Path(char **args);
+void print_env(void);
 
 #endif

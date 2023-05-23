@@ -35,6 +35,11 @@ void prompt(char **av, char **env)
 			free(string);
 			exit(EXIT_SUCCESS);
 		}
+		if (comp_string(args[0], "env") == 0)
+                {
+                // Call the print_env function to print the environment
+                print_env();
+        	}
 		fpid = fork();
 		if (fpid == -1)
 		{
