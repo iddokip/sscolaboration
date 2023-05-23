@@ -20,8 +20,8 @@ void processInput(char *string, char **args);
 size_t getLength(const char *str);
 void executeCommand(char **args, char **av, char **env);
 int comp_string(const char *str1, const char *str2);
-char* Append_Path(const char* dir, const char* cmnd);
-char* modfypath(const char* c_path, const char* cmnd, const char* args);
-char* Handle_Path(char **args);
+char *Append_Path(const char *dir, const char *cmnd);
+char *modfypath(const char *c_path, const char *cmnd, const char *args);
+char *Handle_Path(char **args);
 
 #endif

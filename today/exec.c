@@ -20,9 +20,9 @@ void executeCommand(char **args, char **av, char **env)
 		}
 	}
 	if (comp_string(args[0], "exit") == 0)
-                {
-                        exit(EXIT_SUCCESS);
-                }
+	{
+		exit(EXIT_SUCCESS);
+	}
 
 	if (execve(args[0], args, env) == -1)
 	{
