@@ -1,4 +1,12 @@
 #include "shell.h"
+
+
+/**
+ * Handle_Pipe - Includes pipe arguments to path.
+ * @arg: The command argument containing the pipe symbol.
+ * Return: The modified command path with pipe arguments.
+ */
+
 char *Handle_Pipe(char *arg)
 {
 	char *cmnd = strtok(arg, "|");
@@ -13,7 +21,7 @@ char *Handle_Pipe(char *arg)
 	while (len > 0 && trimmed_args[len - 1] == ' ')
 		trimmed_args[--len] = '\0';
 
-	char *modified_path = malloc(getLength(cmnd) + getLength(trimmed_args) + 4)
+	char *modified_path = malloc(getLength(cmnd) + getLength(trimmed_args) + 4);
 
 		if (modified_path == NULL)
 		{

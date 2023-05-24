@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ * Handle_Path - Adds the command path for a given argument.
+ * @args: Array of arguments.
+ * Return: The added command path or NULL if not found.
+ */
+
 char *Handle_Path(char **args)
 {
 	const char *dir = "/bin/";
