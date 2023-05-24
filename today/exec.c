@@ -16,7 +16,7 @@ void executeCommand(char **args, char **av, char **env)
 	{
 		if (Handle_Path(args) == 0)
 		{
-			write(STDOUT_FILENO, av[0], getLength(av[0]));
+			write(STDOUT_FILENO, args[0], getLength(args[0]));
 			write(STDOUT_FILENO, str1, getLength(str1));
 			args[0] = NULL;
 		}
