@@ -8,6 +8,7 @@
  */
 void executeCommand(char **args, char **av, char **env)
 {
+	char *str1 = ": not found\n";
 	char *str = ": No such file or directory\n";
 
 	/*check if the path has to Handles*/
@@ -15,7 +16,8 @@ void executeCommand(char **args, char **av, char **env)
 	{
 		if (Handle_Path(args) == 0)
 		{
-			printf("%s: Command not found\n", args[0]);
+			write(STDOUT_FILENO, av[0], getLength(av[0]));
+			write(STDOUT_FILENO, str1, getLength(str1));
 			args[0] = NULL;
 		}
 	}
