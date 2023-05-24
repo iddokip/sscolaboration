@@ -30,11 +30,6 @@ void prompt(char **av, char **env)
 			continue; /*Skip the rest of the loop and prompt again*/
 		}
 		processInput(string, args);
-		if (comp_string(args[0], "exit") == 0)
-		{
-			free(string);
-			exit(EXIT_SUCCESS);
-		}
 		fpid = fork();
 		if (fpid == -1)
 		{
