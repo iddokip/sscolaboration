@@ -1,30 +1,30 @@
 #include "shell.h"
-char* Handle_Pipe(char* arg)
+char *Handle_Pipe(char *arg)
 {
-    char* cmnd = strtok(arg, "|");
-    char* arg_str = strtok(NULL, "|");
-    char* trimmed_args = arg_str;
+	char *cmnd = strtok(arg, "|");
+	char *arg_str = strtok(NULL, "|");
+	char *trimmed_args = arg_str;
 
-    while (*trimmed_args == ' ')
-        trimmed_args++;
+	while (*trimmed_args == ' ')
+		trimmed_args++;
 
-    size_t len = getLength(trimmed_args);
+	size_t len = getLength(trimmed_args);
 
-    while (len > 0 && trimmed_args[len - 1] == ' ')
-        trimmed_args[--len] = '\0';
+	while (len > 0 && trimmed_args[len - 1] == ' ')
+		trimmed_args[--len] = '\0';
 
-    char* modified_path = malloc(getLength(cmnd) + getLength(trimmed_args) + 4);
+	char *modified_path = malloc(getLength(cmnd) + getLength(trimmed_args) + 4)
 
-    if (modified_path == NULL)
-    {
-        perror("malloc");
-        exit(EXIT_FAILURE);
-    }
+		if (modified_path == NULL)
+		{
+			perror("malloc");
+			exit(EXIT_FAILURE);
+		}
 
-    str_cpy(modified_path, cmnd);
-    str_cat(modified_path, " | ");
-    str_cat(modified_path, trimmed_args);
+	str_cpy(modified_path, cmnd);
+	str_cat(modified_path, " | ");
+	str_cat(modified_path, trimmed_args);
 
-    return modified_path;
+	return (modified_path);
 }
 
