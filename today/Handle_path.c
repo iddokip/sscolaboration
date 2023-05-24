@@ -14,7 +14,7 @@ char *Handle_Path(char **args)
 
 	if (access(c_path, X_OK) == 0)
 	{
-		char *pipe_arg = strchr(args[0], '|');
+		char *pipe_arg = my_strchr(args[0], '|');
 
 		if (pipe_arg != NULL)
 		{
