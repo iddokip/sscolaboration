@@ -1,99 +1,99 @@
 #include "shell.h"
 /**
- * _realloc - change the size and copy the content
- * @ptr: malloc pointer to reallocate
- * @old_size: old number of bytes
- * @new_size: new number of Bytes
- * Return: nothing
+ * _realloc -ncreases the size and copie
+ * @pptr:  pointer to reallocate
+ * @oold_size: previous sze of  bytes
+ * @nnew_size:  current number of Bytes
+ * Return: NULL
  */
-void *_realloc(char *ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(char *pptr, unsigned int oold_size, unsigned int nnew_size)
 {
-	char *p = NULL;
-	unsigned int i;
+	char *pp = NULL;
+	unsigned int ii;
 
-	if (new_size == old_size)
-		return (ptr);
-	if (ptr == NULL)
+	if (nnew_size == oold_size)
+		return (pptr);
+	if (pptr == NULL)
 	{
-		p = _calloc(new_size + 1, sizeof(char));
-		if (!p)
+		pp = _calloc(nnew_size + 1, sizeof(char));
+		if (!pp)
 			return (NULL);
-		return (p);
+		return (pp);
 	}
-	if (new_size == 0 && ptr != NULL)
+	if (nnew_size == 0 && pptr != NULL)
 	{
-		free(ptr);
+		free(pptr);
 		return (NULL);
 	}
-	if (new_size > old_size)
+	if (nnew_size > oold_size)
 	{
-		p = _calloc(new_size + 1, sizeof(char));
-		if (!p)
+		pp = _calloc(nnew_size + 1, sizeof(char));
+		if (!pp)
 			return (NULL);
-		for (i = 0; i < old_size; i++)
-			p[i] = *((char *)ptr + i);
-		free(ptr);
+		for (ii = 0; ii < oold_size; ii++)
+			pp[ii] = *((char *)ptr + ii);
+		free(pptr);
 	}
 	else
 	{
-		p = _calloc(new_size + 1, sizeof(char));
-		if (!p)
+		pp = _calloc(nnew_size + 1, sizeof(char));
+		if (!pp)
 			return (NULL);
-		for (i = 0; i < new_size; i++)
-			p[i] = *((char *)ptr + i);
-		free(ptr);
+		for (ii = 0; ii < nnew_size; ii++)
+			pp[ii] = *((char *)ptr + ii);
+		free(pptr);
 	}
-	return (p);
+	return (pp);
 }
 
 /**
- * _realloc2 - change the size and copy the content
- * @a: string to add
- * @p: malloc pointer to reallocate
- * @old: old number of bytes
- * @new_size: new number of Bytes
+ * _realloc2 - adjusts size and  copy the content
+ * @aa: string to copy 
+ * @pp:  ptr to reallocate
+ * @oold: previous number of bytes
+ * @nnew_size: current number of Bytes
  * Return: nothing
  */
-void *_realloc2(char *a, char *p, unsigned int old, unsigned int new_size)
+void *_realloc2(char *aa, char *pp, unsigned int oold, unsigned int nnew_size)
 {
-	char *pa = NULL;
-	unsigned int i, j = 0;
+	char *ppa = NULL;
+	unsigned int ii, jj = 0;
 
-	if (new_size == old)
+	if (nnew_size == oold)
 		return (p);
-	if (p == NULL || a == NULL)
+	if (pp == NULL || aa == NULL)
 	{
-		pa = _calloc(new_size + 1, sizeof(char));
-		if (!pa)
+		ppa = _calloc(nnew_size + 1, sizeof(char));
+		if (!ppa)
 			return (NULL);
-		return (pa);
+		return (ppa);
 	}
-	while (a[j] != '\0')
-		j++;
-	if (new_size == 0 && p != NULL)
+	while (aa[jj] != '\0')
+		jj++;
+	if (nnew_size == 0 && pp != NULL)
 	{
-		free(p);
+		free(pp);
 		return (NULL);
 	}
-	if (new_size > old)
+	if (nnew_size > old)
 	{
-		pa = _calloc(new_size + 1, sizeof(char));
-		if (!pa)
+		ppa = _calloc(nnew_size + 1, sizeof(char));
+		if (!ppa)
 			return (NULL);
-		for (i = 0; i < j; i++)
-			pa[i] = a[i];
-		for (; i <= new_size; i++)
-			pa[i] = *((char *)p + (i - j));
-		free(p);
+		for (ii = 0; ii < jj; ii++)
+			ppa[ii] = a[ii];
+		for (; ii <= nnew_size; ii++)
+			ppa[ii] = *((char *)pp + (ii - jj));
+		free(pp);
 	}
 	else
 	{
-		pa = _calloc(new_size, sizeof(char));
-		if (!pa)
+		ppa = _calloc(nnew_size, sizeof(char));
+		if (!ppa)
 			return (NULL);
-		for (i = 0; i < new_size; i++)
-			pa[i] = *((char *)p + i);
-		free(p);
+		for (ii = 0; ii < nnew_size; ii++)
+			pa[ii] = *((char *)p + ii);
+		free(pp);
 	}
-	return (pa);
+	return (ppa);
 }
