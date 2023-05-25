@@ -31,7 +31,7 @@ void *_realloc(char *pptr, unsigned int oold_size, unsigned int nnew_size)
 		if (!pp)
 			return (NULL);
 		for (ii = 0; ii < oold_size; ii++)
-			pp[ii] = *((char *)ptr + ii);
+			pp[ii] = *((char *)pptr + ii);
 		free(pptr);
 	}
 	else
@@ -40,7 +40,7 @@ void *_realloc(char *pptr, unsigned int oold_size, unsigned int nnew_size)
 		if (!pp)
 			return (NULL);
 		for (ii = 0; ii < nnew_size; ii++)
-			pp[ii] = *((char *)ptr + ii);
+			pp[ii] = *((char *)pptr + ii);
 		free(pptr);
 	}
 	return (pp);
@@ -60,7 +60,7 @@ void *_realloc2(char *aa, char *pp, unsigned int oold, unsigned int nnew_size)
 	unsigned int ii, jj = 0;
 
 	if (nnew_size == oold)
-		return (p);
+		return (pp);
 	if (pp == NULL || aa == NULL)
 	{
 		ppa = _calloc(nnew_size + 1, sizeof(char));
@@ -75,13 +75,13 @@ void *_realloc2(char *aa, char *pp, unsigned int oold, unsigned int nnew_size)
 		free(pp);
 		return (NULL);
 	}
-	if (nnew_size > old)
+	if (nnew_size > oold)
 	{
 		ppa = _calloc(nnew_size + 1, sizeof(char));
 		if (!ppa)
 			return (NULL);
 		for (ii = 0; ii < jj; ii++)
-			ppa[ii] = a[ii];
+			ppa[ii] = aa[ii];
 		for (; ii <= nnew_size; ii++)
 			ppa[ii] = *((char *)pp + (ii - jj));
 		free(pp);
@@ -92,7 +92,7 @@ void *_realloc2(char *aa, char *pp, unsigned int oold, unsigned int nnew_size)
 		if (!ppa)
 			return (NULL);
 		for (ii = 0; ii < nnew_size; ii++)
-			pa[ii] = *((char *)p + ii);
+			ppa[ii] = *((char *)pp[ + ii);
 		free(pp);
 	}
 	return (ppa);

@@ -28,7 +28,7 @@ int _issetenv(char **iu, char ***env, int *en, int lp, char *ag[])
 	if (BBcont == 7)
 	{
 		if (iu[1] != NULL && iu[2] != NULL)
-			_setenv(p, env, en, lp, ag);
+			_setenv(iu, env, en, lp, ag);
 		else
 			_put_err(iu, lp, 5, ag);
 		CCsalida = 0;
@@ -37,7 +37,7 @@ int _issetenv(char **iu, char ***env, int *en, int lp, char *ag[])
 	else if (BBcont == 6)
 	{
 		CCsalida = 0;
-		_put_err(IU, lp, 3, ag);
+		_put_err(iu, lp, 3, ag);
 		currentstatus(&CCsalida);
 	}
 	return (CCsalida);
@@ -59,7 +59,7 @@ void _setenv(char **iu, char ***env, int *en, int lp, char *ag[])
 	lg = _strlen(iu[1]);
 	withequal = str_concat(iu[1], "=");
 	entirenv = str_concat(withequal, iu[2]);
-	for (i = 0; (*myenv)[i] != NULL; i++, cont = 0)
+	for (i = 0; (*env)[i] != NULL; i++, cont = 0)
 	{
 		for (j = 0; iu[1][j] != '\0' && j < lg; j++)
 		{
@@ -108,17 +108,17 @@ void _setenvcreat(char ***env, int *en, char *AAentirenv)
 	CCnew = _calloc(*en + 2, sizeof(char *));
 	for (AAi = 0; (*env)[AAi] != NULL; AAi++)
 	{
-		for (BBk = 0; (*env)[i][BBk]; BBk++)
+		for (BBk = 0; (*env)[AAi][BBk]; BBk++)
 			;
-		CCnew[i] = _calloc(BBk + 1, sizeof(char));
-		for (k = 0; (*env)[AAi][BBk] != '\0'; BBk++)
+		CCnew[AAi] = _calloc(BBk + 1, sizeof(char));
+		for (BBk = 0; (*env)[AAi][BBk] != '\0'; BBk++)
 			CCnew[AAi][BBk] = (*env)[AAi][BBk];
 	}
-	CCnew[BBi] = _calloc(_strlen(AAentirenv) + 1, sizeof(char));
+	CCnew[AAi] = _calloc(_strlen(AAentirenv) + 1, sizeof(char));
 	for (BBk = 0; AAentirenv[BBk] != '\0'; BBk++)
-		new[AAi][BBk] = AAentirenv[BBk];
-	AAnew[AAi + 1] = NULL;
+		CCnew[AAi][BBk] = AAentirenv[BBk];
+	CCnew[AAi + 1] = NULL;
 	*en = *en + 1;
 	free_grid((*env), *en);
-	(*env) = new;
+	(*env) = CCnew;
 }
