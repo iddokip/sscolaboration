@@ -20,18 +20,18 @@ char *_verifypath(char *pth, char *pd)
 			newpath = _calloc(cc + 1, sizeof(char));
 			newpath[0] = pd[0];
 			for (ii = 0; pth[ii] != '\0'; ii++)
-				newpath[ii + 1] = path[ii];
+				newpath[ii + 1] = pth[ii];
 			free(pth);
 			pth = newpath;
 			aa++;
 			cc++;
 		}
-		else if (path[aa] == ':' && pth[aa + 1] == ':')
+		else if (pth[aa] == ':' && pth[aa + 1] == ':')
 		{
-			newpath = _calloc(c + 1, sizeof(char));
+			newpath = _calloc(cc + 1, sizeof(char));
 			for (ii = 0; ii <= aa; ii++)
 				newpath[ii] = pth[ii];
-			newpath[i] = pd[0];
+			newpath[ii] = pd[0];
 			for (ii = ii + 1; pth[ii] != '\0'; ii++)
 				newpath[ii] = pth[ii - 1];
 			free(pth);
@@ -51,9 +51,9 @@ char *_getpath(char **mm)
 {
 	int ii, jj, kk = 0, ww = 0, ccont = 0;
 	char str[] = "PATH=";
-	char *path;
+	char *pth;
 
-	for (ii = 0; mm[i] != NULL; ii++)
+	for (ii = 0; mm[ii] != NULL; ii++)
 	{
 		for (jj = 0; mm[ii][jj] != '\0'; jj++)
 		{
@@ -127,7 +127,7 @@ char **checkbin(char **bb, char **mm)
 		valor = str_concat(buf, bb[0]);
 		if (stat(valor, &veri) == 0)
 		{
-			bb[0] = _realloc2(buf, bb[0], i, _strlen(valor));
+			bb[0] = _realloc2(buf, bb[0], ii, _strlen(valor));
 			free(buf), free(valor);
 			free(newpath);
 			return (bb);

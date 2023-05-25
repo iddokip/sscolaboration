@@ -35,11 +35,11 @@ void _updatepwd(char *buff, char **env)
 			for (kk = 0; eentirepwd[kk] != '\0'; kk++)
 				env[ii][kk] = eentirepwd[kk];
 			for (; kk < nvlen; kk++)
-				env[ii][kkk] = 0;
+				env[ii][kk] = 0;
 		}
 		else
 		{
-			env[i] = _realloc(env[i], nvlen, bufflen + 1);
+			env[ii] = _realloc(env[ii], nvlen, bufflen + 1);
 			for (kk = 0; eentirepwd[kk] != '\0'; kk++)
 				env[ii][kk] = eentirepwd[kk];
 		}

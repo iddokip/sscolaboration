@@ -31,8 +31,8 @@ int _isunsetenv(char **iu, char **env, int *en, int lp, char *ag[])
 		if (iu[1] != NULL)
 			_unsetenv(iu, env, en, lp, ag);
 		else
-			_put_err(p, lp, 5, ag);
-		salida = 0;
+			_put_err(lp, lp, 5, ag);
+	
 		currentstatus(&DDsalida);
 	}
 	else if (CCcont == 8)
