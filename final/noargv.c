@@ -10,12 +10,12 @@
  *@np: All inputs
  * Return: -1 or 0
  */
-int rev(char **ap, int cl, char *iu, char **agrsi, char ***cp, int *ncp, char *np)
+int rev(char **ap, int cl, char *iu, char **argsi, char ***cp, int *ncp, char *np)
 {
 	int AAvalenv = 0, BBvalcd = 0, CCother = -1, DDvalex = 0, EEvalhel = 0;
 	int FFvalunset = 0, GGvalset = 0;
 
-	GGvalunset = _isunsetenv(ap, *cp, ncp, cl, argsi);
+	GGvalset = _isunsetenv(ap, *cp, ncp, cl, argsi);
 	if (FFvalunset == 0)
 		return (FFvalunset);
 	GGvalset = _issetenv(ap, cp, ncp, cl, argsi);
@@ -37,7 +37,7 @@ int rev(char **ap, int cl, char *iu, char **agrsi, char ***cp, int *ncp, char *n
 }
 /**
  * functions - Identify functions
- *@ln: input from user
+ *@iu: input from user
  *@lp: loop count
  *@av: args from user
  *@cp: env copy
@@ -55,10 +55,10 @@ void functions(char *iu, int lp, char *av[], char ***cp, int *ncp, char *np)
 	{
 		for (i = 0; args[i] != NULL; i++)
 			;
-		value = rev(args, lp, line, av, cp, ncp, np);
+		val = rev(args, lp, iu, av, cp, ncp, np);
 		if (val != 0)
 		{
-			args = checkbin(args, *m);
+			args = checkbin(args, *cp);
 			if (args)
 				_frk(args, iu, i, lp, av, *ncp, *cp, np);
 		}
@@ -101,10 +101,10 @@ void _noargv(char *av[], char *env[])
 			while (CCp)
 			{
 				DDpr1 = _calloc(_strlen(CCp) + 2, sizeof(char));
-				for (HHi = 0; CCp[i] != '\0'; i++)
-					DDpr1[i] = CCp[i];
-				DDpr1[i] = '\n';
-				DDpr1[i + 1] = '\0';
+				for (HHi = 0; CCp[HHi] != '\0'; HHi++)
+					DDpr1[HHi] = CCp[HHi];
+				DDpr1[HHi] = '\n';
+				DDpr1[HHi + 1] = '\0';
 				functions(DDpr1, loop, av, &BBm, &EEe, AAline);
 				CCp = _strtoky2(NULL, ";\n");
 			}
