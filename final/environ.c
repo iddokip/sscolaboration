@@ -55,7 +55,7 @@ char **create_env(char *env[])
 			return (NULL);
 		}
 		for (ii = 0; ii < cc; ii++)
-			myenv[jj][ii] = envp[jj][ii];
+			myenv[jj][ii] = env[jj][ii];
 		jj++;
 	}
 	myenv[jj] = NULL;

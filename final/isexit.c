@@ -23,7 +23,7 @@ void _type(char **pp, int LL, char *ll, int ii, char **vv, char **mm, int ee, ch
 	}
 	else
 	{
-		while (pp[1][cc] != '\0')
+		while (pp[1][c] != '\0')
 		{
 			if ((pp[1][0] != '+' && pp[1][0] != '-') &&
 			    (pp[1][c] < 48 || pp[1][c] > 57))
@@ -90,7 +90,7 @@ int _isexit(char **pp, int LL, char *ll, char **vv, char **mm, char *ff)
 
 	if (cont == 5)
 	{
-		_type(pp, LL, ll, xx, vv, mm, ee, ff);
+		_type(pp, LL, ll, x, vv, mm, e, ff);
 		salida = 0;
 	}
 	else if (cont == 4)

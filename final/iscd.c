@@ -62,7 +62,7 @@ void _fullcd(char *ff, char *aaux)
 	int ww;
 
 	for (ww = 0; aaux[ww] != '\0'; ww++)
-		ff[ww] = aux[ww];
+		ff[ww] = aaux[ww];
 	for (; ww < BUF_SIZE; ww++)
 		ff[ww] = 0;
 }

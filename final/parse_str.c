@@ -12,7 +12,7 @@ int Counter(char *LL, char *lim)
 	while (lim[ct2] != '\0')
 	{
 		ct = 0;
-		while (LL && L[ct] != '\0')
+		while (LL && LL[ct] != '\0')
 		{
 			if (LL[ct] != lim[ct2])
 			{

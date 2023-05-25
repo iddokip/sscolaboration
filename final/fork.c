@@ -53,7 +53,7 @@ void _frk(char **pp, char *ll, int aa, int LL, char **vv, int ee, char **mm, cha
 			{
 				_put_err(pp, LL, 3, vv);
 			}
-			free(ff), free(l);
+			free(ff), free(ll);
 			free_grid(pp, aa), free_grid(mm, ee);
 			exit(127);
 		}

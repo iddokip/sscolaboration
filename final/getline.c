@@ -82,7 +82,7 @@ char  *_getline(int *aa, char **mm, int ee)
 			return (lline);
 	}
 	if (nnum == 0)
-		ssalida1(mm, ee);
+		salida1(mm, ee);
 	return (lline);
 }
 /**
@@ -103,7 +103,7 @@ char  *_getlineav(int *aa, char **mm, int ee, char **av)
 	for (; (nnum != 0); bbz = 0, free(lli))
 	{
 		ffd = open(av[1], O_RDONLY);
-		if (fd == -1)
+		if (ffd == -1)
 		{ close(ffd), free_grid(mm, ee);
 			write(STDERR_FILENO, av[0], _strlen(av[0]));
 			write(STDERR_FILENO, ": 0: ", 5);

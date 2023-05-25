@@ -11,9 +11,9 @@ char *_gethome(char **mm)
 	char str[] = "HOME=";
 	char *hhome = NULL;
 
-	for (ii = 0; mm[i] != NULL; ii++)
+	for (ii = 0; mm[ii] != NULL; ii++)
 	{
-		for (jj = 0; mm[i][j] != '\0'; jj++)
+		for (jj = 0; mm[ii][jj] != '\0'; jj++)
 		{
 			if (ccont == 5)
 				break;
@@ -27,7 +27,7 @@ char *_gethome(char **mm)
 	}
 	if (ccont == 5)
 	{
-		hhome = mm[i];
+		hhome = mm[ii];
 		for (kk = 0; kk < 5; kk++)
 		{
 			hhome++;

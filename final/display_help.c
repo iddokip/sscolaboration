@@ -109,7 +109,7 @@ ssize_t read_exithelp(char **mm)
 	buf = malloc((sizeof(char) * letters + 1));
 	if (buf == NULL)
 		return (0);
-	home = _gethome(m)m;
+	home = _gethome(mm);
 	helpdir = str_concat(home, helpfiles);
 	fd = open(helpdir, O_RDONLY);
 	if (fd == -1)

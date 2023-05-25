@@ -11,7 +11,7 @@ void free_grid(char **ggrid, int hheight)
 
 	for (ii = 0; ii < hheight; ii++)
 	{
-		free(ggrid[i]);
+		free(ggrid[ii]);
 	}
 	free(ggrid);
 }

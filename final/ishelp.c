@@ -16,7 +16,7 @@ int _ishelp(char **pp, int lloop, char *vv[], char **mm)
 	{
 		if (ii < 4)
 		{
-			if (p[0][ii] == str[ii])
+			if (pp[0][ii] == str[ii])
 				ccont++;
 		}
 		ii++;

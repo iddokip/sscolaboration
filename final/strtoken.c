@@ -79,7 +79,7 @@ char *_strtoky2(char *ss, char *dd)
 	{
 		if (_sch(dd, ss[i]) == 0 && ss[i + 1] == '\0')
 			i++;
-		else if (_sch(d, ss[i]) == 0 && _sch(dd, ss[i + 1]) == 0)
+		else if (_sch(dd, ss[i]) == 0 && _sch(dd, ss[i + 1]) == 0)
 			i++;
 		else if (_sch(dd, ss[i]) == 0 && _sch(dd, ss[i + 1]) == 1)
 		{

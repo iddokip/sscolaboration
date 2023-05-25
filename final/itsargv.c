@@ -17,7 +17,7 @@ void _yesargv(char *av[], char *env[])
 		if (loop == 0)
 		{
 			BBm = create_env(env);
-			for (EEe = 0; BBm[e] != NULL; EEe++)
+			for (EEe = 0; BBm[EEe] != NULL; EEe++)
 				;
 		}
 		AAline = _getlineav(FFploop, BBm, EEe, av);
@@ -28,7 +28,7 @@ void _yesargv(char *av[], char *env[])
 			while (CCp)
 			{
 				DDpr1 = _calloc(_strlen(CCp) + 2, sizeof(char));
-				for (HHi = 0; CCp[HHi] != '\0'; i++)
+				for (HHi = 0; CCp[HHi] != '\0'; HHi++)
 					DDpr1[HHi] = CCp[HHi];
 				DDpr1[HHi] = '\n';
 				DDpr1[HHi + 1] = '\0';

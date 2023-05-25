@@ -92,7 +92,7 @@ void *_realloc2(char *aa, char *pp, unsigned int oold, unsigned int nnew_size)
 		if (!ppa)
 			return (NULL);
 		for (ii = 0; ii < nnew_size; ii++)
-			ppa[ii] = *((char *)pp[ + ii);
+			ppa[ii] = *((char *)pp + ii);
 		free(pp);
 	}
 	return (ppa);
