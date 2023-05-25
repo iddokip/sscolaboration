@@ -38,7 +38,7 @@ char **create_env(char *env[])
 	int ii, jj = 0, cc = 0;
 	static char **myenv;
 
-	for (i = 0; env[ii] != NULL; ii++)
+	for (ii = 0; env[ii] != NULL; ii++)
 		;
 	myenv = _calloc(ii + 1, sizeof(char *));
 	if (!myenv)
@@ -46,7 +46,7 @@ char **create_env(char *env[])
 	while (env[jj] != NULL)
 	{
 		cc = 0;
-		while (envp[jj][cc] != '\0')
+		while (env[jj][cc] != '\0')
 			cc++;
 		myenv[jj] = _calloc(cc + 1, sizeof(char));
 		if (myenv[jj] == NULL)

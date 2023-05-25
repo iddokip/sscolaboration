@@ -50,7 +50,7 @@ char *_comments(char *ln)
 {
 	int aa = 0, cc = 0, flag = 0;
 
-	while (line[cc] != '\0')
+	while (ln[cc] != '\0')
 		cc++;
 	while (ln[aa] != '\0')
 	{

@@ -45,7 +45,7 @@ void _frk(char **pp, char *ll, int aa, int LL, char **vv, int ee, char **mm, cha
 			if (exist == 0 && execute == -1)
 			{
 				_put_err(pp, LL, 4, vv);
-				free(ff), free(l);
+				free(ff), free(ll);
 				free_grid(pp, aa), free_grid(mm, ee);
 				exit(126);
 			}

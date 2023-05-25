@@ -14,12 +14,12 @@ int _isunsetenv(char **iu, char **env, int *en, int lp, char *ag[])
 	char AAstr[] = "unsetenv";
 	int BBi = 0, CCcont = 0, DDsalida = -1;
 
-	AAi = 0;
-	while (IU[0][BBi] != '\0')
+	BBi = 0;
+	while (iu[0][BBi] != '\0')
 	{
 		if (BBi < 8)
 		{
-			if (iup[0][i] == AAstr[i])
+			if (iu[0][BBi] == AAstr[BBi])
 				CCcont++;
 		}
 		BBi++;
@@ -31,7 +31,7 @@ int _isunsetenv(char **iu, char **env, int *en, int lp, char *ag[])
 		if (iu[1] != NULL)
 			_unsetenv(iu, env, en, lp, ag);
 		else
-			_put_err(lp, lp, 5, ag);
+			_put_err(iu, lp, 5, ag);
 	
 		currentstatus(&DDsalida);
 	}
@@ -56,10 +56,10 @@ void _unsetenv(char **iu, char **env, int *ne, int lp, char *ag[])
 {
 	int AAi, BBlg, CCj, DDk = 0, FFk2 = 0, GGk3 = 0, HHcont = 0;
 
-	BBlg = _strlen(p[1]);
-	for (i = 0; env[AAi] != NULL; AAi++, HHcont = 0)
+	BBlg = _strlen(iu[1]);
+	for (iu = 0; env[AAi] != NULL; AAi++, HHcont = 0)
 	{
-		for (CCj = 0; iu[1][CCj] != '\0' &&CC j < BBlg; CCj++)
+		for (CCj = 0; iu[1][CCj] != '\0' && CCj < BBlg; CCj++)
 		{
 			if (iu[1][CCj] == env[AAi][CCj])
 				HHcont++;
@@ -69,21 +69,21 @@ void _unsetenv(char **iu, char **env, int *ne, int lp, char *ag[])
 	}
 	if (HHcont == BBlg)
 	{
-		for (DDk = i; env[DDk] != NULL && env[DDk + 1] != NULL; DDk++)
+		for (DDk = AAi; env[DDk] != NULL && env[DDk + 1] != NULL; DDk++)
 		{
 			for (FFk2 = 0; env[DDk][FFk2] != '\0'; FFk2++)
-				myenv[DDk][FFk2] = 0;
-			for (GGk3 = 0; env[k + 1][GGk3] != '\0'; GGk3++)
+				env[DDk][FFk2] = 0;
+			for (GGk3 = 0; env[DDk + 1][GGk3] != '\0'; GGk3++)
 				;
 			if (FFk2 < GGk3)
-				env[DDk] = _realloc(env[DDK], FFk2, GGk3);
-			for (FFk2 = 0; env[k + 1][FFk2] != '\0'; FFk2++)
+				env[DDk] = _realloc(env[DDk], FFk2, GGk3);
+			for (FFk2 = 0; env[DDk + 1][FFk2] != '\0'; FFk2++)
 				env[DDk][FFk2] = env[DDk + 1][FFk2];
 		}
-		free(env[k]);
+		free(env[DDk]);
 		env[DDk] = NULL;
-		*en = *en - 1;
-		free(env[k + 1]);
+		*ne = *ne - 1;
+		free(env[DDk + 1]);
 	}
 	else
 		_put_err(iu, lp, 5, ag);

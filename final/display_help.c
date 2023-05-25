@@ -52,7 +52,7 @@ ssize_t read_help(char **mm)
  * Return: number of letters to display
  */
 
-ssize_t read_cdhelp(char **m)m
+ssize_t read_cdhelp(char **mm)
 {
 	int fd, r, w;
 	char *buf;
