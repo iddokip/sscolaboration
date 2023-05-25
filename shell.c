@@ -1,17 +1,26 @@
 #include "shell.h"
 /**
- * main - Entry point
- * promt - function to promt for input
- * @av : argument values
- * @ac : number of argument count
- * @env : - enviroment variables
- * Return: always 0
+ * main - shell skeleton
+ * @argc: number of arguments in the input
+ * @argv: arguments in the input
+ * @envp: environment variables
+ * Return: 0 on Success
  */
-int main(int ac, char **av, char **env)
+int main(int argc, char *argv[], char *envp[])
 {
-	if (ac == 1)
+
+	if (argc == 1)
 	{
-		prompt(av, env);
+		_noargv(argv, envp);
+	}
+	else if (argc == 2)
+	{
+		_yesargv(argv, envp);
+	}
+	else
+	{
+		write(STDIN_FILENO, "NO ADMITTED AMOUNT OF ARGUMENTS", 31);
+		write(STDIN_FILENO, "\n", 1);
 	}
 	return (0);
 }
