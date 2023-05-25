@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * read_help - reads all builtins text files and prints it to POSIX stdout
- * @m: copy of environment variables
- * Return: number of characters to write, otherwise 0.
+ * read_help - Read bultin text
+ * @mm: Env copy
+ * Return: number of characters to write.
  */
 
-ssize_t read_help(char **m)
+ssize_t read_help(char **mm)
 {
 	int fd, r, w;
 	char *buf;
@@ -17,7 +17,7 @@ ssize_t read_help(char **m)
 	buf = malloc((sizeof(char) * letters + 1));
 	if (buf == NULL)
 		return (0);
-	home = _gethome(m);
+	home = _gethome(mm);
 	helpdir = str_concat(home, helpfiles);
 	fd = open(helpdir, O_RDONLY);
 	if (fd == -1)
@@ -47,12 +47,12 @@ ssize_t read_help(char **m)
 }
 
 /**
- * read_cdhelp - reads cd text file and prints it to POSIX stdout
- * @m: copy of environment variables
- * Return: number of letters to write, otherwise 0.
+ * read_cdhelp - Reads dc text 
+ * @mm: Env copy
+ * Return: number of letters to display
  */
 
-ssize_t read_cdhelp(char **m)
+ssize_t read_cdhelp(char **m)m
 {
 	int fd, r, w;
 	char *buf;
@@ -63,7 +63,7 @@ ssize_t read_cdhelp(char **m)
 	buf = malloc((sizeof(char) * letters + 1));
 	if (buf == NULL)
 		return (0);
-	home = _gethome(m);
+	home = _gethome(mm);
 	helpdir = str_concat(home, helpfiles);
 	fd = open(helpdir, O_RDONLY);
 	if (fd == -1)
@@ -93,12 +93,12 @@ ssize_t read_cdhelp(char **m)
 }
 
 /**
- * read_exithelp - reads exit text file and prints it to POSIX stdout
- * @m: copy of environment variables
- * Return: number of letters to write, otherwise 0.
+ * read_exithelp - Read text iniput file
+ * @mm: Env copy
+ * Return: number of letters to write
  */
 
-ssize_t read_exithelp(char **m)
+ssize_t read_exithelp(char **mm)
 {
 	int fd, r, w;
 	char *buf;
@@ -109,7 +109,7 @@ ssize_t read_exithelp(char **m)
 	buf = malloc((sizeof(char) * letters + 1));
 	if (buf == NULL)
 		return (0);
-	home = _gethome(m);
+	home = _gethome(m)m;
 	helpdir = str_concat(home, helpfiles);
 	fd = open(helpdir, O_RDONLY);
 	if (fd == -1)
@@ -139,12 +139,12 @@ ssize_t read_exithelp(char **m)
 }
 
 /**
- * read_helphelp - reads help text file and prints it to POSIX stdout
- * @m: copy of environment variables
- * Return: number of letters to write, otherwise 0.
+ * read_helphelp - read help text in input
+ * @mm: Env copy
+ * Return: number of letters to write
  */
 
-ssize_t read_helphelp(char **m)
+ssize_t read_helphelp(char **mm)
 {
 	int fd, r, w;
 	char *buf;
@@ -155,7 +155,7 @@ ssize_t read_helphelp(char **m)
 	buf = malloc((sizeof(char) * letters + 1));
 	if (buf == NULL)
 		return (0);
-	home = _gethome(m);
+	home = _gethome(mm);
 	helpdir = str_concat(home, helpfiles);
 	fd = open(helpdir, O_RDONLY);
 	if (fd == -1)
