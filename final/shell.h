@@ -68,6 +68,11 @@ void _setenvcreat(char ***env, int *en, char *AAentirenv);
 int _sch(char *ss, char cc);
 char *_strtoky(char *ss, char *dd);
 char *_strtoky2(char *ss, char *dd);
+void _errorcd(char **ptr);
+void _errorexit(char **ptr);
+void _errorhelp(char **ptr);
+void _errorgarbage(char **ptr);
+void _errorenv(char **ptr);
 
 
 
