@@ -35,7 +35,7 @@ char *_comments(char *ln);
 int _isenv(char **ptr, char **env);
 char **create_env(char *env[]);
 void _env(char **env);
-ar *_gethome(char **mm);
+char *_gethome(char **mm);
 void _type(char **pp, int LL, char *ll, int ii, char **vv, char **mm, int ee, char *ff);
 int _isexit(char **pp, int LL, char *ll, char **vv, char **mm, char *ff);
 int rev(char **ap, int cl, char *iu, char **argsi, char ***cp, int *ncp, char *np);
