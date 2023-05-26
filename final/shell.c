@@ -6,7 +6,8 @@
  * @envp: env virables 
  * Return: zero
  */
-int main(int ac, char *av[], char *env)
+int main(int ac, char *av[], char **env)
+
 {
 
 	if (ac == 1)
