@@ -1,28 +1,26 @@
 #include "shell.h"
 /**
- * main -  Entry point to shell
- * @argc: No of Args found in  input
- * @argv: all argts found in the input
- * @envp: env virables 
- * Return: zero
+ * main - shell skeleton
+ * @argc: number of arguments in the input
+ * @argv: arguments in the input
+ * @envp: environment variables
+ * Return: 0 on Success
  */
-int main(int ac, char *av[], char *env[])
-
+int main(int argc, char *argv[], char *envp[])
 {
 
-	if (ac == 1)
+	if (argc == 1)
 	{
-		_noargv(av, env);
+		_noargv(argv, envp);
 	}
-	else if (ac == 2)
+	else if (argc == 2)
 	{
-		_yesargv(av, env);
+		_yesargv(argv, envp);
 	}
 	else
 	{
-		write(STDIN_FILENO, "ARGUMENTS NOT PRESENT", 31);
+		write(STDIN_FILENO, "NO ADMITTED AMOUNT OF ARGUMENTS", 31);
 		write(STDIN_FILENO, "\n", 1);
 	}
 	return (0);
 }
-

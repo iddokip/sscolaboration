@@ -1,34 +1,34 @@
 #include "shell.h"
 /**
  *rev - checks if the input is env or not
- *@ap: Array of inputs from user
- *@cl: Counts the number of loops
- *@iu: User input
- *@argsi: Input arguments
- *@cp: Env copy
- *@ncp: number of Env copies
- *@np: All inputs
+ *@pp: Array of inputs from user
+ *@LL: Counts the number of loops
+ *@vv: User input
+ *@mm: Input arguments
+ *@ee: Env copy
+ *@ff: number of Env copies
+ *@lli: All inputs
  * Return: -1 or 0
  */
-int rev(char **ap, int cl, char *iu, char **argsi, char ***cp, int *ncp, char *np)
+int rev(char **pp, int LL, char *lli, char **vv, char ***mm, int *ee, char *ff)
 {
 	int AAvalenv = 0, BBvalcd = 0, CCother = -1, DDvalex = 0, EEvalhel = 0;
 	int FFvalunset = 0, GGvalset = 0;
 
-	GGvalset = _isunsetenv(ap, *cp, ncp, cl, argsi);
+	FFvalunset = _isunsetenv(pp, *mm, ee, LL, vv);
 	if (FFvalunset == 0)
 		return (FFvalunset);
-	GGvalset = _issetenv(ap, cp, ncp, cl, argsi);
+	GGvalset = _issetenv(pp, mm, ee, LL, vv);
 	if (GGvalset == 0)
 	return (GGvalset);
-	DDvalex = _isexit(ap, cl, iu, argsi, *cp, np);
+	DDvalex = _isexit(pp, LL, lli, vv, *mm, ff);
 	if (DDvalex == 0)
 		return (DDvalex);
-	EEvalhel = _ishelp(ap, cl, argsi, *cp);
+	EEvalhel = _ishelp(pp, LL, vv, *mm);
 	if (EEvalhel == 0)
 		return (EEvalhel);
-	AAvalenv = _isenv(ap, *cp);
-	BBvalcd = _iscd(ap, cl, argsi, *cp);
+	AAvalenv = _isenv(pp, *mm);
+	BBvalcd = _iscd(pp, LL, vv, *mm);
 	if (AAvalenv == 0)
 		return (AAvalenv);
 	if (BBvalcd == 0)
@@ -37,79 +37,78 @@ int rev(char **ap, int cl, char *iu, char **argsi, char ***cp, int *ncp, char *n
 }
 /**
  * functions - Identify functions
- *@iu: input from user
- *@lp: loop count
- *@av: args from user
- *@cp: env copy
- *@ncp: count of elements in cp
- *@np complete input of user
+ *@lline: input from user
+ *@lloop: loop count
+ *@aargv: args from user
+ *@mm: env copy
+ *@ee: count of elements in cp
+ *@ff complete input of user
  */
-void functions(char *iu, int lp, char *av[], char ***cp, int *ncp, char *np)
+void functions(char *lline, int lloop, char *aargv[], char ***mm, int *ee, char *ff)
 {
-	char **args = NULL;
-	int val = 1, i = 0;
+	char **aargs = NULL;
+	int vvalue = 1, ii = 0;
 
-	iu = _comments(iu);
-	args = parsing(iu);
-	if (args)
+	lline = _comments(lline);
+	aargs = parsing(lline);
+	if (aargs)
 	{
-		for (i = 0; args[i] != NULL; i++)
+		for (ii = 0; aargs[ii] != NULL; ii++)
 			;
-		val = rev(args, lp, iu, av, cp, ncp, np);
-		if (val != 0)
+		vvalue = rev(aargs, lloop, lline, aargv, mm, ee, ff);
+		if (vvalue != 0)
 		{
-			args = checkbin(args, *cp);
-			if (args)
-				_frk(args, iu, i, lp, av, *ncp, *cp, np);
+			aargs = checkbin(aargs, *mm);
+			if (aargs)
+				_frk(aargs, lline, ii, lloop, aargv, *ee, *mm, ff);
 		}
-		free_grid(args, i);
-		free(iu);
+		free_grid(aargs, ii);
+		free(lline);
 	}
 	else
 	{
-		free(iu);
+		free(lline);
 		fflush(STDIN_FILENO);
 	}
-	_put_err(args, lp, 0, av);
+	_put_err(aargs, lloop, 0, aargv);
 }
 /**
  * _noargv - shell form without filename at input
- * @av: args found from  in the input
- * @env: env variables
+ * @aargv: args found from  in the input
+ * @eenvp: env variables
  */
-void _noargv(char *av[], char *env[])
+void _noargv(char *aargv[], char *eenvp[])
 {
-	char *AAline = NULL, **BBm = NULL, *CCp = NULL, *DDpr1 = NULL;
-	int EEe = 0, *FFploop, HHi = 0, GGsem = 0;
-	static int loop;
+	char *lline = NULL, **mm = NULL, *pp = NULL, *ppr1 = NULL;
+	int ee = 0, *pploop, ii = 0, ssem = 0;
+	static int lloop;
 
-	loop = 0;
-	FFploop = &loop;
+	lloop = 0;
+	pploop = &lloop;
 	while (1)
 	{
-		if (loop == 0)
+		if (lloop == 0)
 		{
-			BBm = create_env(env);
-			for (EEe = 0; BBm[EEe] != NULL; EEe++)
+			mm = create_env(eenvp);
+			for (ee = 0; mm[ee] != NULL; ee++)
 				;
 		}
-		AAline = _getline(FFploop, BBm, EEe);
-		GGsem = semicolon(AAline, loop, av);
-		if (!(GGsem == 1))
+		lline = _getline(pploop, mm, ee);
+		ssem = semicolon(lline, lloop, aargv);
+		if (!(ssem == 1))
 		{
-			CCp = _strtoky2(AAline, ";\n");
-			while (CCp)
+			pp = _strtoky2(lline, ";\n");
+			while (pp)
 			{
-				DDpr1 = _calloc(_strlen(CCp) + 2, sizeof(char));
-				for (HHi = 0; CCp[HHi] != '\0'; HHi++)
-					DDpr1[HHi] = CCp[HHi];
-				DDpr1[HHi] = '\n';
-				DDpr1[HHi + 1] = '\0';
-				functions(DDpr1, loop, av, &BBm, &EEe, AAline);
-				CCp = _strtoky2(NULL, ";\n");
+				ppr1 = _calloc(_strlen(pp) + 2, sizeof(char));
+				for (ii = 0; pp[ii] != '\0'; ii++)
+					ppr1[ii] = pp[ii];
+				ppr1[ii] = '\n';
+				ppr1[ii + 1] = '\0';
+				functions(ppr1, lloop, aargv, &mm, &ee, lline);
+				pp = _strtoky2(NULL, ";\n");
 			}
 		}
-		free(AAline);
+		free(lline);
 	}
 }
-

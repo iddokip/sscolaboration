@@ -1,42 +1,41 @@
 #include "shell.h"
 /**
  * _yesargv - shell form without filename at input
- * @av: args found from in the input
- * @env: env variables in shell
+ * @aargv: args found from in the input
+ * @eenvp: env variables in shell
  */
-void _yesargv(char *av[], char *env[])
+void _yesargv(char *aargv[], char *eenvp[])
 {
-	char *AAline = NULL, **BBm = NULL, *CCp = NULL, *DDpr1 = NULL;
-	int EEe = 0, *FFploop, HHi, GGsem;
-	static int loop;
+	char *lline = NULL, **mm = NULL, *pp = NULL, *ppr1 = NULL;
+	int ee = 0, *pploop, ii, ssem;
+	static int lloop;
 
-	loop = 0;
-	FFploop = &loop;
+	lloop = 0;
+	pploop = &lloop;
 	while (1)
 	{
-		if (loop == 0)
+		if (lloop == 0)
 		{
-			BBm = create_env(env);
-			for (EEe = 0; BBm[EEe] != NULL; EEe++)
+			mm = create_env(eenvp);
+			for (ee = 0; mm[ee] != NULL; ee++)
 				;
 		}
-		AAline = _getlineav(FFploop, BBm, EEe, av);
-		GGsem = semicolon(AAline, loop, av);
-		if (!(GGsem == 1))
+		lline = _getlineav(pploop, mm, ee, aargv);
+		ssem = semicolon(lline, lloop, aargv);
+		if (!(ssem == 1))
 		{
-			CCp = _strtoky2(AAline, ";\n");
-			while (CCp)
+			pp = _strtoky2(lline, ";\n");
+			while (pp)
 			{
-				DDpr1 = _calloc(_strlen(CCp) + 2, sizeof(char));
-				for (HHi = 0; CCp[HHi] != '\0'; HHi++)
-					DDpr1[HHi] = CCp[HHi];
-				DDpr1[HHi] = '\n';
-				DDpr1[HHi + 1] = '\0';
-				functions(DDpr1, loop, av, &BBm, &EEe, AAline);
-				CCp = _strtoky2(NULL, ";\n");
+				ppr1 = _calloc(_strlen(pp) + 2, sizeof(char));
+				for (ii = 0; pp[ii] != '\0'; ii++)
+					ppr1[ii] = pp[ii];
+				ppr1[ii] = '\n';
+				ppr1[ii + 1] = '\0';
+				functions(ppr1, lloop, aargv, &mm, &ee, lline);
+				pp = _strtoky2(NULL, ";\n");
 			}
 		}
-		free(AAline);
+		free(lline);
 	}
 }
-
